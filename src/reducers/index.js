@@ -1,13 +1,18 @@
 // import { IStoreState } from "../store";
-// import * as Actions from "../actions";
+
 
 
 export const initializeState = {
-    authentication: null,
+    text: 'test입니다.',
 };
 
-export default (state,action) => {
+export default (state = initializeState, action) => {
 switch (action.type) {
+    case '@test':
+    return {
+        ...state,
+        text: action.payload,
+      };
     default:
     return Object.assign({}, state);
 }

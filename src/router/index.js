@@ -14,22 +14,22 @@ import {
 const Router = () => {
     return (
         <BrowserRouter>
-        <Switch>
-            <Route exact path="/signIn">
-                <SignIn />
-            </Route>
-            <Route exact path="/signUp">
-                <SignUp />
-            </Route>
             <Switch>
-                <Route exact path="/" component={Home}/>
-                <Route exact path="/favorite" component={Favorite}/>
-                <Route exact path="/myPage" component={MyPage}/>
-                <Route exact path="/shop" component={Shop}/>
-                <Route exact path="/shopManaging" component={ShopManaging}/>
-                <Route exact path="/shopRanking" component={ShopRanking}/>
+                <Route exact path="/signIn">
+                    <SignIn />
+                </Route>
+                <Route exact path="/signUp">
+                    <SignUp />
+                </Route>
+                <Switch>
+                    <Route exact path="/" component={Home}/>
+                    <Route exact path="/favorite" component={Favorite}/>
+                    <Route exact path="/myPage" component={MyPage}/>
+                    <Route exact path="/shop" component={Shop}/>
+                    <Route exact path="/shopManaging" component={ShopManaging}/>
+                    <Route exact path="/shopRanking" component={ShopRanking}/>
+                </Switch>
             </Switch>
-        </Switch>
         </BrowserRouter>
     );
 };

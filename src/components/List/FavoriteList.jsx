@@ -1,9 +1,10 @@
 import React from 'react';
 
-const FavoriteList = () => {
+const FavoriteList = (props) => {
     return (
         <div>
-            FavoriteList
+            <button onClick={props.getTest}>{props.title}</button>
+            <span data-testid='getText'>{props.text}</span>
         </div>
     );
 }

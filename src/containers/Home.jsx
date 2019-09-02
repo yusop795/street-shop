@@ -1,20 +1,32 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import * as Actions from "../actions";
 import { RankList, FavoriteList } from '../components/List'
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
     return {
-
+        text: state.text,
     };
 }
 
+const mapDispatchToProps = dispatch => ({
+    getTest: text => dispatch(Actions.getTest(text)),
+});
+
 class Home extends Component {
+    state = {
+        text:'',
+    }
+
+    getTest = (text) => {
+        this.props.getTest('aaaa')
+    }
+
     render() {
         return (
             <div>
-                <FavoriteList/>
+                <FavoriteList title="좋아요" type="FavoriteList" getTest={this.getTest} text={this.props.text}/>
                 <RankList/>
-                HomeScreen
             </div>
         );
     }
@@ -22,4 +34,5 @@ class Home extends Component {
 
 export default connect(
     mapStateToProps,
+    mapDispatchToProps
 )(Home);
