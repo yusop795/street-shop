@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as Actions from "../actions";
+import { testAction } from "../actions";
 import { RankList, FavoriteList } from '../components/List'
 
 const mapStateToProps = (state) => {
@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-    getTest: text => dispatch(Actions.getTest(text)),
+    getTest: text => dispatch(testAction.getTest(text)),
 });
 
 class Home extends Component {

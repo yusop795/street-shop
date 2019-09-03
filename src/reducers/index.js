@@ -1,5 +1,4 @@
-// import { IStoreState } from "../store";
-
+import { testAction } from "../actions";
 
 
 export const initializeState = {
@@ -8,11 +7,16 @@ export const initializeState = {
 
 export default (state = initializeState, action) => {
 switch (action.type) {
-    case '@test':
+    case testAction.type.GET_TEST:
     return {
         ...state,
         text: action.payload,
       };
+    case testAction.type.SET_TEST:
+    return {
+        ...state,
+        text: action.payload,
+    };
     default:
     return Object.assign({}, state);
 }

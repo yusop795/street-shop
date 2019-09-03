@@ -1,2 +1,6 @@
-import { createAction } from 'redux-actions';
-export const getTest = createAction('@test', text => text);
+import * as testAction  from './test';
+
+
+export {
+    testAction
+}
