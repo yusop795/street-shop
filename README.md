@@ -13,3 +13,6 @@
 
 디버깅
 - redux-devtools-extension
+
+컴포넌트 단위 테스트
+- redux-devtools-extension

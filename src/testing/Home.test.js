@@ -19,13 +19,13 @@ const renderWithRedux = (
 // Home 컴포넌트 Test
 describe('<Home />', () => {
   it('matches snapshot', () => {
-    const utils = renderWithRedux(<Home/>);
+    const utils = renderWithRedux(<Home/>,{initializeState});
     expect(utils.container).toMatchSnapshot();
   });
 
   it('getTextTest', () => {
-    const { getByTestId, getByText }  = renderWithRedux(<Home/>)
+    const { getByTestId, getByText, store }  = renderWithRedux(<Home/>,{initializeState})
     fireEvent.click(getByText('좋아요'));
-    expect(getByTestId('getText')).toHaveTextContent('aaaa');
+    expect(getByTestId('getText')).toHaveTextContent(store.getState('test').text);
   });
 });
