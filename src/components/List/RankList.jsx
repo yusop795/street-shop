@@ -1,12 +1,10 @@
 import React from 'react';
-import './list.scss'
+import './list.scss';
 
-const RankList = () => {
-    return (
-        <div>
-            RankList
-        </div>
-    );
-}
+const RankList = () => (
+  <div>
+      RankList
+  </div>
+);
 
 export default RankList;

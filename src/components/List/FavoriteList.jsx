@@ -1,13 +1,11 @@
 import React from 'react';
-import './list.scss'
+import './list.scss';
 
-const FavoriteList = (props) => {
-    return (
-        <div>
-            <button onClick={props.getTest}>{props.title}</button>
-            <span data-testid='getText'>{props.text}</span>
-        </div>
-    );
-}
+const FavoriteList = ({ getTest, title, text }) => (
+  <div>
+    <button type="button" onClick={getTest}>{title}</button>
+    <span data-testid="getText">{text}</span>
+  </div>
+);
 
 export default FavoriteList;

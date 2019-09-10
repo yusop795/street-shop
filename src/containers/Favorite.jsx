@@ -1,22 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-function mapStateToProps(state) {
-    return {
-
-    };
-}
+const mapStateToProps = (state) => ({
+  text: state.text,
+});
 
 class Favorite extends Component {
-    render() {
-        return (
-            <div>
-                FavoriteScreen
-            </div>
-        );
-    }
+  state = {
+    text: '1',
+  };
+
+  render() {
+    const { text } = this.state;
+    console.log(text);
+    return <div>dqdqwdqwd FavoriteScreen</div>;
+  }
 }
 
-export default connect(
-    mapStateToProps,
-)(Favorite);
+export default connect(mapStateToProps)(Favorite);

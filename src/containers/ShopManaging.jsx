@@ -1,22 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-function mapStateToProps(state) {
-    return {
-
-    };
-}
+const mapStateToProps = (state) => ({
+  text: state.home.text,
+});
 
 class ShopManaging extends Component {
-    render() {
-        return (
-            <div>
-                ShopManagingScreen
-            </div>
-        );
-    }
+  render() {
+    return <div>ShopManagingScreen</div>;
+  }
 }
 
-export default connect(
-    mapStateToProps,
-)(ShopManaging);
+export default connect(mapStateToProps)(ShopManaging);

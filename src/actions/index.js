@@ -1,6 +1,6 @@
-import * as testAction  from './test';
+import * as testAction from './test';
 
 
-export {
-    testAction
-}
+export default {
+  testAction,
+};

@@ -1,38 +1,44 @@
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { testAction } from "../actions";
-import { RankList, FavoriteList } from '../components/List'
+import testAction from '../actions';
+import { RankList, FavoriteList } from '../components/List';
 
-const mapStateToProps = (state) => {
-    return {
-        text: state.text,
-    };
-}
+const mapStateToProps = (state) => ({
+  text: state.home.text,
+});
 
-const mapDispatchToProps = dispatch => ({
-    getTest: text => dispatch(testAction.getTest(text)),
+const mapDispatchToProps = (dispatch) => ({
+  getTest: (text) => dispatch(testAction.getTest(text)),
+  setTest: (text) => dispatch(testAction.setTest(text)),
 });
 
 class Home extends Component {
-    state = {
-        text:'',
-    }
+  componentDidMount() {
+    this.props.getTest('hoho');
+  }
 
-    getTest = (text) => {
-        this.props.getTest('aaaa')
-    }
+  setTest = (text) => {
+    console.log(this.state.text, this.state.input);
+    this.props.setTest(text);
+  };
 
-    render() {
-        return (
-            <div>
-                <FavoriteList title="좋아요" type="FavoriteList" getTest={this.getTest} text={this.props.text}/>
-                <RankList/>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div>
+        <input
+          onChange={({ target }) => {
+            this.setTest(target.value);
+          }}
+        />
+        <FavoriteList title="좋아요" type="FavoriteList" getTest={this.setTest} text={this.props.text} />
+        <RankList />
+      </div>
+    );
+  }
 }
 
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps
+  mapStateToProps,
+  mapDispatchToProps,
 )(Home);

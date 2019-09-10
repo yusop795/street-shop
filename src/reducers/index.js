@@ -1,7 +1,6 @@
 
 export const initializeState = {
-    text: 'test입니다.',
+  text: 'test입니다.',
 };
 
-export { default as homeReducer } from "./homeReducer";
-  
+export { default as home } from './homeReducer';

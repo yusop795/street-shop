@@ -1,24 +1,23 @@
-import { testAction } from "../actions";
+import testAction from '../actions';
 
 
 const initializeState = {
-    text: 'test입니다.',
+  text: 'test입니다.',
 };
 
 export default (state = initializeState, action) => {
-switch (action.type) {
+  switch (action.type) {
     case testAction.type.GET_TEST:
-    return {
+      return {
         ...state,
         text: action.payload,
       };
     case testAction.type.SET_TEST:
-    return {
+      return {
         ...state,
         text: action.payload,
-    };
+      };
     default:
-    return Object.assign({}, state);
-}
+      return { ...state };
+  }
 };
-  

@@ -1,22 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-function mapStateToProps(state) {
-    return {
-
-    };
-}
+const mapStateToProps = (state) => ({
+  text: state.home.text,
+});
 
 class SignUp extends Component {
-    render() {
-        return (
-            <div>
-                SignupScreen
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div>
+        SignupScreen
+      </div>
+    );
+  }
 }
 
 export default connect(
-    mapStateToProps,
+  mapStateToProps,
 )(SignUp);
