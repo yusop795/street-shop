@@ -5,6 +5,7 @@
   "dependencies": {
     "@testing-library/react": "^9.1.4",
     "antd": "^3.22.2",
+    "immer": "^4.0.0",
     "moment": "^2.24.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
@@ -48,7 +49,8 @@
       "react/jsx-one-expression-per-line": 0,
       "react/destructuring-assignment": 0,
       "react/prop-types": 0,
-      "react/state-in-constructor": 0
+      "react/state-in-constructor": 0,
+      "func-names": 0
     }
   }
 }

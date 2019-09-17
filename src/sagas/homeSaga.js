@@ -3,15 +3,15 @@ import {
   put,
   delay,
 } from 'redux-saga/effects';
-import testAction from '../actions';
+import { testTypes, testActions } from '../actions/test';
 
 export function* testAsync() {
   yield delay(1000);
-  // console.log(333, testAction);
-  yield put(testAction.setTest('bbb'));
+  console.log(333, testActions);
+  yield put(testActions.setTest('bbb'));
 }
 
 export function* test() {
-  // console.log(222);
-  yield takeEvery(testAction.type.GET_TEST, testAsync);
+  console.log(222, testTypes.GET_TEST);
+  yield takeEvery(testTypes.GET_TEST, testAsync);
 }

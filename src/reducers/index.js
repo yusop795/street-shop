@@ -1,6 +1,7 @@
 
+// 초기값
 export const initializeState = {
   text: 'test입니다.',
 };
-
-export { default as home } from './homeReducer';
+// 리듀서
+export { default as homeReducer } from './homeReducer';

@@ -5,13 +5,13 @@ import { combineReducers, createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from 'redux-saga';
 import Router from './router';
-import { home, initializeState } from './reducers';
+import { homeReducer, initializeState } from './reducers';
 import rooSaga from './sagas';
 
 import * as serviceWorker from './serviceWorker';
 
 const rootReducer = combineReducers({
-  home,
+  homeReducer,
 });
 
 const sagaMiddleware = createSagaMiddleware();

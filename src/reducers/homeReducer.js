@@ -1,4 +1,4 @@
-import testAction from '../actions';
+import { testTypes } from '../actions/test';
 
 
 const initializeState = {
@@ -7,12 +7,12 @@ const initializeState = {
 
 export default (state = initializeState, action) => {
   switch (action.type) {
-    case testAction.type.GET_TEST:
+    case testTypes.GET_TEST:
       return {
         ...state,
         text: action.payload,
       };
-    case testAction.type.SET_TEST:
+    case testTypes.SET_TEST:
       return {
         ...state,
         text: action.payload,

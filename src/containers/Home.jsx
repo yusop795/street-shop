@@ -1,16 +1,16 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import testAction from '../actions';
+import { testActions } from '../actions/test';
 import { RankList, FavoriteList } from '../components/List';
 
 const mapStateToProps = (state) => ({
-  text: state.home.text,
+  text: state.homeReducer.text,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  getTest: (text) => dispatch(testAction.getTest(text)),
-  setTest: (text) => dispatch(testAction.setTest(text)),
+  getTest: (text) => dispatch(testActions.getTest(text)),
+  setTest: (text) => dispatch(testActions.setTest(text)),
 });
 
 class Home extends Component {
@@ -19,7 +19,8 @@ class Home extends Component {
   }
 
   setTest = (text) => {
-    console.log(this.state.text, this.state.input);
+    // console.log(this.state.text, this.state.input);
+    console.log(this.props.text);
     this.props.setTest(text);
   };
 
