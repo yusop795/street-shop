@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import { HeaderNav, BottomNav } from '../components/Nav';
+
 const mapStateToProps = (state) => ({
-  text: state.home.text,
 });
 
 class MyPage extends Component {
   render() {
     return (
-      <div>
-        MypageScreen
+      <div className="container">
+        <HeaderNav />
+        <div>MyPage</div>
+        <BottomNav />
       </div>
     );
   }

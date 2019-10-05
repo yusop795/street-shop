@@ -7,6 +7,7 @@
     "antd": "^3.22.2",
     "immer": "^4.0.0",
     "moment": "^2.24.0",
+    "node-sass": "^4.12.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-redux": "^7.1.1",
@@ -50,7 +51,8 @@
       "react/destructuring-assignment": 0,
       "react/prop-types": 0,
       "react/state-in-constructor": 0,
-      "func-names": 0
+      "func-names": 0,
+      "import/prefer-default-export": 0
     }
   }
 }

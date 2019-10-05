@@ -2,16 +2,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { testActions } from '../actions/test';
+
+
+import { HeaderNav, BottomNav } from '../components/Nav';
+import { MainMap } from '../components/Map';
 import { RankList, FavoriteList } from '../components/List';
-
-const mapStateToProps = (state) => ({
-  text: state.homeReducer.text,
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  getTest: (text) => dispatch(testActions.getTest(text)),
-  setTest: (text) => dispatch(testActions.setTest(text)),
-});
 
 class Home extends Component {
   componentDidMount() {
@@ -26,18 +21,28 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
-        <input
-          onChange={({ target }) => {
-            this.setTest(target.value);
-          }}
+      <div className="container">
+        <HeaderNav
+          left={'<'}
+          title=" HOME"
+          right={false}
         />
-        <FavoriteList title="좋아요" type="FavoriteList" getTest={this.setTest} text={this.props.text} />
-        <RankList />
+        <MainMap />
+        <BottomNav />
       </div>
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  text: state.homeReducer.text,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  getTest: (text) => dispatch(testActions.getTest(text)),
+  setTest: (text) => dispatch(testActions.setTest(text)),
+});
+
 
 export default connect(
   mapStateToProps,

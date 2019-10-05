@@ -1,0 +1,31 @@
+@import '../../theme/color.scss';
+
+#headerNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 16px;
+  background: $mainColor;
+  color: $WhiteTextColor;
+  > div {
+  }
+  // #headerNavLeft {
+  // }
+  // #headerNavTitle {
+  // }
+  // #headerNavRight {
+  // }
+}
+
+#bottomNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 60px;
+  padding: 0 16px;
+  background: $mainColor;
+  color: $WhiteTextColor;
+  > div {
+  }
+}

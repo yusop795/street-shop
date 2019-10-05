@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { HeaderNav, BottomNav } from '../components/Nav';
 
 const mapStateToProps = (state) => ({
-  text: state.text,
 });
 
 class Favorite extends Component {
   state = {
-    text: '1',
   };
 
   render() {
-    const { text } = this.state;
-    console.log(text);
-    return <div>dqdqwdqwd FavoriteScreen</div>;
+    return (
+      <div className="container">
+        <HeaderNav />
+        <div>dqdqwdqwd FavoriteScreen</div>
+        <BottomNav />
+      </div>
+    );
   }
 }
 
