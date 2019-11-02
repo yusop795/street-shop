@@ -30,6 +30,8 @@ module.exports = {
     'no-mixed-operators': 0,
     'react/no-did-update-set-state': 0,
     'import/extensions': 0,
+    'no-console':0,
+    'react-hooks/exhaustive-deps':0,
   },
   env: {
     jest: true,

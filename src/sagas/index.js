@@ -4,7 +4,6 @@ import {
 import * as homeSaga from './homeSaga';
 
 export default function* () {
-  console.log(111);
   yield all([
     homeSaga.test(),
   ]);
