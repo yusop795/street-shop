@@ -1,19 +1,15 @@
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { testActions } from "../actions/test";
 
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { testActions } from '../actions/test';
-
-
-import { HeaderNav, BottomNav } from '../components/Nav';
-import { MainMap } from '../components/Map';
-import { RankList, FavoriteList } from '../components/List';
-
+import { HeaderNav, BottomNav } from "../components/Nav";
+import { MainMap } from "../components/Map";
 class Home extends Component {
   componentDidMount() {
-    this.props.getTest('hoho');
+    this.props.getTest("hoho");
   }
 
-  setTest = (text) => {
+  setTest = text => {
     // console.log(this.state.text, this.state.input);
     console.log(this.props.text);
     this.props.setTest(text);
@@ -22,11 +18,7 @@ class Home extends Component {
   render() {
     return (
       <div className="container">
-        <HeaderNav
-          left={'<'}
-          title=" HOME"
-          right={false}
-        />
+        <HeaderNav left={false} title=" HOME" right={false} />
         <MainMap />
         <BottomNav />
       </div>
@@ -34,17 +26,17 @@ class Home extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   text: state.homeReducer.text,
+  shop: state.homeReducer.shop
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  getTest: (text) => dispatch(testActions.getTest(text)),
-  setTest: (text) => dispatch(testActions.setTest(text)),
+const mapDispatchToProps = dispatch => ({
+  getTest: text => dispatch(testActions.getTest(text)),
+  setTest: text => dispatch(testActions.setTest(text))
 });
-
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(Home);

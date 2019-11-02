@@ -1,0 +1,72 @@
+@import "../../theme/color.scss";
+.list_item {
+  width: 100%;
+  border-bottom: 1px solid rgba(231, 231, 231, 1);
+  a {
+    display: block;
+    text-decoration: none;
+    padding: 16px 20px 15px;
+  }
+  .list_con {
+    font-size: 16px;
+    font-weight: bold;
+    color: $mainTextColor;
+    .name {
+      line-height: 20px;
+      margin-bottom: 5px;
+    }
+    .on_now,
+    .get_ready_now {
+      line-height: 12px;
+      font-size: 10px;
+      font-weight: normal;
+    }
+    .on_now {
+      color: $mainColor;
+    }
+    .get_ready_now {
+      color: $bottomNavIcon;
+    }
+    .distance {
+      font-size: 10px;
+      line-height: 36px;
+    }
+  }
+}
+.ranking_list,
+.favorite_list {
+  .list_con {
+    position: relative;
+    padding-right: 48px;
+    .distance {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 42px;
+    }
+  }
+}
+.ranking_list {
+  .rank_badge {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 42px;
+    height: 38px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    &.badge_1 {
+      background-image: url(./img/1.png);
+    }
+    &.badge_2 {
+      background-image: url(./img/1.png);
+    }
+    &.badge_3 {
+      background-image: url(./img/1.png);
+    }
+  }
+  .list_con {
+    padding-left: 60px;
+  }
+}

@@ -1,26 +1,35 @@
-@import '../../theme/color.scss';
+@import "../../theme/color.scss";
 
-#headerNav {
+#headerNav,
+#bottomNav {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   height: 70px;
   padding: 0 16px;
   background: $mainColor;
   color: $WhiteTextColor;
 }
-
+#headerNav {
+  top: 0;
+  justify-content: space-between;
+}
 #bottomNav {
-  display: flex;
-  align-items: center;
+  bottom: 0;
   justify-content: space-around;
-  height: 70px;
-  padding: 0 16px;
-  background: $mainColor;
-  color: $WhiteTextColor;
   > div a {
     color: $WhiteTextColor;
     opacity: 0.5;
     font-size: 18px;
   }
+}
+#headerNavLeft,
+#headerNavRight {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
 }
