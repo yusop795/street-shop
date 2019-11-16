@@ -1,10 +1,10 @@
 import {
   all,
 } from 'redux-saga/effects';
-import * as homeSaga from './homeSaga';
+import testSaga from './testSaga';
 
 export default function* () {
   yield all([
-    homeSaga.test(),
+    testSaga(),
   ]);
 }
