@@ -32,6 +32,9 @@ module.exports = {
     'import/extensions': 0,
     'no-console':0,
     'react-hooks/exhaustive-deps':0,
+    'jsx-quotes':0,
+    'arrow-parens':0,
+    'react/no-array-index-key':0
   },
   env: {
     jest: true,
