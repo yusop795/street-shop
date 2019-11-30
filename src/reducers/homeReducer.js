@@ -5,7 +5,8 @@
  * 타입 = '리듀서명/타입'
  */
 const types = {
-  FETCH_MAP: 'test/FETCH_MAP',
+  FETCH_MAP: 'home/FETCH_MAP',
+  FETCH_MAP_SUCCESS: 'home/FETCH_MAP_SUCCESS',
 };
 
 /**
@@ -15,6 +16,7 @@ const types = {
  */
 const actions = {
   fetchMap: (location) => ({ type: types.FETCH_MAP, location }),
+  fetchMapSuccess: (payload) => ({ type: types.FETCH_MAP_SUCCESS, payload }),
 };
 
 export { types as homeTypes, actions as homeActions };
@@ -23,7 +25,8 @@ export { types as homeTypes, actions as homeActions };
  * 리듀서의 초기 값 설정
  */
 const initialState = {
-  location: { x: 0, y: 0 },
+  location: {},
+  address: {},
 };
 
 /**
@@ -36,6 +39,12 @@ export default function homeReducer(state = initialState, action) {
         ...state,
         location: action.location,
       };
+    case types.FETCH_MAP_SUCCESS:
+      return {
+        ...state,
+        address: action.payload.documents[0].address,
+      };
+
     default:
       return state;
   }

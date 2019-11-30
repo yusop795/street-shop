@@ -7,12 +7,14 @@ const KAKAO_INSTANCE = axios.create({
   headers: { Authorization: `KakaoAK ${KAKAO_KEY}` },
 });
 
-
-export const fetchMap = (location) => {
+export const fetchMap = ({ location }) => {
+  console.log('location', location);
   return KAKAO_INSTANCE
-    .get('/geo/coord2address.json?x=127.423084873712&y=37.0789561558879')
+    .get('/geo/coord2address.json', {
+      params: location,
+    })
     .then((response) => {
-      // console.log(123, response);
+      console.log(123, response);
       return response;
     }).catch((error) => {
       return error;
