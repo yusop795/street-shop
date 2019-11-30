@@ -1,10 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-console */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './map.scss';
 
-const MainMap = ({ location }) => {
+const MainMap = ({ location, fetchGeolocation }) => {
   useEffect(() => {
+    console.log(33);
     if (location) {
       const script = document.createElement('script');
       script.async = true;
@@ -13,18 +14,31 @@ const MainMap = ({ location }) => {
       script.onload = () => {
         const { kakao } = window;
         kakao.maps.load(() => {
-          const container = document.getElementById('mapBox'); // 지도를 담을 영역의 DOM 레퍼런스
+          const container = document.getElementById('mapBox');
           const options = {
-            // 지도를 생성할 때 필요한 기본 옵션
             center: new kakao.maps.LatLng(location.y, location.x), // 지도의 중심좌표.
             level: 3, // 지도의 레벨(확대, 축소 정도)
           };
 
           const map = new kakao.maps.Map(container, options);
+          // 마커를 생성합니다
+          const marker = new kakao.maps.Marker({
+            position: options.center,
+          });
+
+          // 마커가 지도 위에 표시되도록 설정합니다
+          marker.setMap(map);
         });
       };
     }
   }, [location]);
-  return <div id='mapBox' />;
+
+  return (
+    <div id='mapBox'>
+      <div id='btns' onClick={fetchGeolocation}>
+        현재위치
+      </div>
+    </div>
+  );
 };
 export default MainMap;

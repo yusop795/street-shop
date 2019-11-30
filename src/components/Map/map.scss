@@ -13,3 +13,12 @@
   // #navHeaderRight {
   // }
 }
+#btns {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 14px;
+  margin: 20px;
+  background: #fff;
+  z-index: 99999;
+}

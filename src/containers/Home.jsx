@@ -5,9 +5,10 @@ import { homeActions } from '../reducers/homeReducer';
 import { HeaderNav, BottomNav } from '../components/Nav';
 import { MainMap } from '../components/Map';
 
-const Home = ({ text, num, address }) => {
+const Home = ({ address }) => {
   const [location, setLocation] = useState('');
-  const getGeolocation = () => {
+  const fetchGeolocation = () => {
+    console.log(1123);
     const options = { enableHighAccuracy: true, maximumAge: 30000, timeout: 27000 };
     navigator.geolocation.getCurrentPosition(
       ({ coords }) => setLocation({ x: coords.longitude, y: coords.latitude }),
@@ -18,13 +19,13 @@ const Home = ({ text, num, address }) => {
 
   // 마운트 될 때 한번
   useEffect(() => {
-    getGeolocation();
+    fetchGeolocation();
   }, []);
 
   return (
     <div className='container'>
       <HeaderNav left={'<'} title=' HOME' right={false} />
-      <MainMap location={location} />
+      <MainMap location={location} fetchGeolocation={fetchGeolocation} />
       <BottomNav />
     </div>
   );
