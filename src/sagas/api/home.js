@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { KAKAO_KEY } from '../../config/config';
+import { KAKAO_KEY } from '../../config';
 
 const KAKAO_INSTANCE = axios.create({
   baseURL: 'https://dapi.kakao.com/v2/local',

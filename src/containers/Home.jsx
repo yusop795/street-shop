@@ -8,7 +8,6 @@ import { MainMap } from '../components/Map';
 const Home = ({ address }) => {
   const [location, setLocation] = useState('');
   const fetchGeolocation = () => {
-    console.log(1123);
     const options = { enableHighAccuracy: true, maximumAge: 30000, timeout: 27000 };
     navigator.geolocation.getCurrentPosition(
       ({ coords }) => setLocation({ x: coords.longitude, y: coords.latitude }),
