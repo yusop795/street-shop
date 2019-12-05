@@ -7,6 +7,7 @@ import createSagaMiddleware from 'redux-saga';
 import Router from './router';
 import { testReducer, homeReducer, shopReducer, initializeState } from './reducers';
 import rooSaga from './sagas';
+import 'antd/dist/antd.css';
 import './theme/common.scss';
 
 import * as serviceWorker from './serviceWorker';
