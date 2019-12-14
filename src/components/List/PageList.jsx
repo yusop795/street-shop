@@ -1,30 +1,51 @@
 import React from "react";
 import "./list.scss";
+import deliver from "../../assets/imgs/deliver.png";
 
 function PageList({ index = 0, shopInfo, rank = false }) {
   return (
-    <li className="list_item">
-      <a href="#">
-        <div className="list_con">
-          {rank ? (
-            <div
-              className={
-                parseInt(index) < 4
-                  ? "rank_badge " + `badge_${parseInt(index)}`
-                  : "rank_badge"
-              }
-            ></div>
-          ) : null}
-          <div className="name">{shopInfo.name}</div>
-          {shopInfo.open_now ? (
-            <div className="on_now">운영중</div>
-          ) : (
-            <div className="get_ready_now">준비중</div>
-          )}
-          <div className="distance">{shopInfo.distance}m</div>
-        </div>
-      </a>
-    </li>
+    <div className="list_box">
+      <div className="list_box_item">
+        <a href="#">
+          <div className="lsit_icon">
+            <img src={deliver} alt="아이콘1" />
+          </div>
+          공지사항
+        </a>
+      </div>
+      <div className="list_box_item">
+        <a href="#">
+          <div className="lsit_icon">
+            <img src={deliver} alt="아이콘1" />
+          </div>
+          공지사항
+        </a>
+      </div>
+      <div className="list_box_item">
+        <a href="#">
+          <div className="lsit_icon">
+            <img src={deliver} alt="아이콘1" />
+          </div>
+          공지사항
+        </a>
+      </div>
+      <div className="list_box_item">
+        <a href="#">
+          <div className="lsit_icon">
+            <img src={deliver} alt="아이콘1" />
+          </div>
+          공지사항
+        </a>
+      </div>
+      <div className="list_box_item">
+        <a href="#">
+          <div className="lsit_icon">
+            <img src={deliver} alt="아이콘1" />
+          </div>
+          공지사항
+        </a>
+      </div>
+    </div>
   );
 }
 

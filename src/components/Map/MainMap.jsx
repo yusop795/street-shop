@@ -1,20 +1,22 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-console */
-import React, { useState, useEffect, useRef } from 'react';
-import { Icon } from 'antd';
-import scriptHelper from '../../utill/scriptHelper';
-import { KAKAO_KEY } from '../../config';
-import './map.scss';
+import React, { useState, useEffect, useRef } from "react";
+import { Icon } from "antd";
+import scriptHelper from "../../utill/scriptHelper";
+import { KAKAO_KEY } from "../../config";
+import "./map.scss";
 
-import iconsHunt from '../../assets/imgs/iconsHunt.png';
+import iconsHunt from "../../assets/imgs/iconsHunt.png";
 
-const kakaoMapScript = scriptHelper(`https://dapi.kakao.com/v2/maps/sdk.js?appkey=${KAKAO_KEY}&autoload=false`);
+const kakaoMapScript = scriptHelper(
+  `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${KAKAO_KEY}&autoload=false`
+);
 
 const MainMap = ({ location, fetchGeolocation }) => {
   const [isSpin, setisSpin] = useState(true);
 
   const moveMap = (kakaoMap, map, marker) => {
-    kakaoMap.event.addListener(map, 'click', mouseEvent => {
+    kakaoMap.event.addListener(map, "click", mouseEvent => {
       // 클릭한 위도, 경도 정보를 가져옵니다
       const latlng = mouseEvent.latLng;
       marker.setPosition(latlng); // 마커 이동
@@ -31,14 +33,14 @@ const MainMap = ({ location, fetchGeolocation }) => {
           // 지도 옵션
           const options = {
             center: new kakaoMap.LatLng(location.y, location.x), // 지도의 중심좌표.
-            level: 3, // 지도의 레벨(확대, 축소 정도)
+            level: 3 // 지도의 레벨(확대, 축소 정도)
           };
 
           // 지도 생성
           const map = new kakaoMap.Map(container, options);
           // 마커 생성
           const marker = new kakaoMap.Marker({
-            position: options.center,
+            position: options.center
           });
           // 마커 표시
           marker.setMap(map);
@@ -55,17 +57,17 @@ const MainMap = ({ location, fetchGeolocation }) => {
 
   useEffect(() => {
     if (location) {
-      renderMap('mapBox');
+      renderMap("mapBox");
     }
   }, [location]);
 
   return (
-    <div id='mapBox'>
+    <div id="mapBox">
       {isSpin ? (
-        <Icon type='loading' spin={isSpin} />
+        <Icon type="loading" spin={isSpin} />
       ) : (
-        <div id='btns' onClick={fetchGeolocation}>
-          <img src={iconsHunt} alt='현재 위치 조회' />
+        <div id="btns" onClick={fetchGeolocation}>
+          <img src={iconsHunt} alt="현재 위치 조회" />
         </div>
       )}
     </div>

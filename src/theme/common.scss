@@ -4,6 +4,7 @@
 */
 @import "./color.scss";
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR|Roboto&display=swap");
+
 html,
 body,
 div,
@@ -164,6 +165,7 @@ table {
   padding: 70px 0px;
 }
 .content_wrap {
+  position: relative;
   width: 100%;
   height: 100%;
   background: #fff;
@@ -252,4 +254,95 @@ table {
   display: none;
   font-size: 14px;
   color: #ed5b46;
+}
+
+.content_top_logo {
+  width: 100%;
+  height: 120px;
+  background-color: #fff;
+  background-image: url("./img/foodtruck_b.png");
+  background-repeat: no-repeat;
+  background-size: 88px auto;
+  background-position: center;
+}
+.not_login {
+  background-color: #f7dfe3;
+  padding: 16px 48px;
+  box-sizing: border-box;
+  .kakao_login {
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    color: #000000;
+    font-weight: bold;
+    text-align: center;
+    background: #ffe812;
+    border: 0;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  .link_to {
+    text-decoration: underline;
+    font-size: 12px;
+    color: #606060;
+  }
+}
+.list_box_item {
+  position: relative;
+  padding: 14px 32px 14px 86px;
+  &.wide {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #00000029;
+    .lsit_icon {
+      > img {
+        margin-top: 24px;
+      }
+    }
+    > a {
+      color: #2699fb;
+    }
+  }
+  > a {
+    display: block;
+    line-height: 24px;
+    color: #606060;
+  }
+  .lsit_icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 52px;
+    width: 86px;
+    text-align: center;
+    > img {
+      margin-top: 12px;
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.footer {
+  margin-top: 64px;
+  padding: 0 32px 16px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 15px;
+  font-size: 13px;
+  color: #606060;
+  font-weight: bold;
+  button {
+    padding: 0;
+  }
+  button,
+  div {
+    margin-bottom: 6px;
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
 }

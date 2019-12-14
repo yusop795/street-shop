@@ -15,7 +15,7 @@ class Favorite extends Component {
   render() {
     return (
       <div className="container">
-        <HeaderNav left={"<"} title="FAVORITE LIST" right={false} />
+        <HeaderNav left={false} title="FAVORITE LIST" right={false} />
         <div className="content_wrap">
           <ul className="favorite_list">
             {this.state.shop.map((data, i) => {

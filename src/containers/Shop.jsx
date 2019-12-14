@@ -15,7 +15,7 @@ class Shop extends Component {
   render() {
     return (
       <div className="container">
-        <HeaderNav left={"<"} title="BEST SHOP" right={false} />
+        <HeaderNav left={false} title="BEST SHOP" right={false} />
         <div className="content_wrap">
           <ul className="ranking_list">
             {this.state.shop.map((data, i) => {
