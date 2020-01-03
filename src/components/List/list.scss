@@ -1,4 +1,4 @@
-@import "../../theme/color.scss";
+@import "../../assets/style/color.scss";
 .list_item {
   width: 100%;
   border-bottom: 1px solid rgba(231, 231, 231, 1);
@@ -57,13 +57,13 @@
     background-size: cover;
     background-position: center;
     &.badge_1 {
-      background-image: url(./img/1.png);
+      background-image: url(../../assets/imgs/icons/1.png);
     }
     &.badge_2 {
-      background-image: url(./img/1.png);
+      background-image: url(../../assets/imgs/icons/1.png);
     }
     &.badge_3 {
-      background-image: url(./img/1.png);
+      background-image: url(../../assets/imgs/icons/1.png);
     }
   }
   .list_con {

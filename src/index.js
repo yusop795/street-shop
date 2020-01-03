@@ -9,18 +9,20 @@ import {
   testReducer,
   homeReducer,
   shopReducer,
+  userReducer,
   initializeState
 } from "./reducers";
 import rooSaga from "./sagas";
 import "antd/dist/antd.css";
-import "./theme/common.scss";
+import "./assets/style/reset.scss";
 
 import * as serviceWorker from "./serviceWorker";
 
 const rootReducer = combineReducers({
   testReducer,
   homeReducer,
-  shopReducer
+  shopReducer,
+  userReducer
 });
 
 const sagaMiddleware = createSagaMiddleware();

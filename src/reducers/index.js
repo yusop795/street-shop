@@ -1,9 +1,8 @@
 // 초기값
-export const initializeState = {
-
-};
+export const initializeState = {};
 
 // 리듀서
-export { default as testReducer } from './testReducer';
-export { default as homeReducer } from './homeReducer';
-export { default as shopReducer } from './shopReducer';
+export { default as testReducer } from "./testReducer";
+export { default as homeReducer } from "./homeReducer";
+export { default as shopReducer } from "./shopReducer";
+export { default as userReducer } from "./userReducer";

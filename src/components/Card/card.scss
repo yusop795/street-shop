@@ -1,0 +1,59 @@
+.form_card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 80px 24px;
+  z-index: 2;
+}
+.form_container {
+  width: 100%;
+  height: 100%;
+  min-height: 374px;
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: 0px 5px 5px 2px rgba(0, 0, 0, 0.1);
+  justify-items: center;
+}
+.form_item_wrapper {
+  box-sizing: border-box;
+  padding: 260px 30px 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../assets/imgs/icons/foodTruck.png);
+  background-repeat: no-repeat;
+  background-position: center 80px;
+  background-size: 83px 83px;
+  text-align: center;
+  &.is_error {
+    .form_textbox_ty1 {
+      border: 1px solid #ed5b46;
+    }
+    .error_text {
+      display: block;
+    }
+  }
+}
+.form_direction {
+  margin-bottom: 16px;
+  font-weight: bold;
+  font-size: 16px;
+}
+.form_textbox_ty1 {
+  box-sizing: border-box;
+  width: 100%;
+  height: 46px;
+  font-size: 16px;
+  line-height: 26px;
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid #bce0fd;
+}
+.error_text {
+  margin-top: 12px;
+  display: none;
+  font-size: 14px;
+  color: #ed5b46;
+}

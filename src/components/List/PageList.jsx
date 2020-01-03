@@ -1,6 +1,6 @@
 import React from "react";
 import "./list.scss";
-import deliver from "../../assets/imgs/deliver.png";
+import deliver from "../../assets/imgs/icons/deliver.png";
 
 function PageList({ index = 0, shopInfo, rank = false }) {
   return (

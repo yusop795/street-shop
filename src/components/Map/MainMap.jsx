@@ -6,7 +6,7 @@ import scriptHelper from "../../utill/scriptHelper";
 import { KAKAO_KEY } from "../../config";
 import "./map.scss";
 
-import iconsHunt from "../../assets/imgs/iconsHunt.png";
+import iconsHunt from "../../assets/imgs/icons/iconsHunt.png";
 
 const kakaoMapScript = scriptHelper(
   `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${KAKAO_KEY}&autoload=false`
